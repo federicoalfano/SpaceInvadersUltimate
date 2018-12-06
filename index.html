@@ -1,0 +1,203 @@
+<html>
+    
+    <head>
+        <link rel="shortcut icon" href="./images/planet-icon.png" />
+        <title >- Space Invaders Ultimate</title>
+        <style>
+            @font-face {
+                font-family: 'Mensch-Bold';
+                src:url('./fonts/Mensch-Bold.ttf.woff') format('woff'),
+                    url('./fonts/Mensch-Bold.ttf.svg#Mensch-Bold') format('svg'),
+                    url('./fonts/Mensch-Bold.ttf.eot'),
+                    url('./fonts/Mensch-Bold.ttf.eot?#iefix') format('embedded-opentype'); 
+                font-weight: normal;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'Virtual-Realm-Italic';
+                src:url('./fonts/Virtual-Realm-Italic.ttf.woff') format('woff'),
+                    url('./fonts/Virtual-Realm-Italic.ttf.svg#Virtual-Realm-Italic') format('svg'),
+                    url('./fonts/Virtual-Realm-Italic.ttf.eot'),
+                    url('./fonts/Virtual-Realm-Italic.ttf.eot?#iefix') format('embedded-opentype'); 
+                font-weight: normal;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: '1st-Enterprises-Chrome';
+                src:url('./fonts/1st-Enterprises-Chrome.ttf.woff') format('woff'),
+                    url('./fonts/1st-Enterprises-Chrome.ttf.svg#1st-Enterprises-Chrome') format('svg'),
+                    url('./fonts/1st-Enterprises-Chrome.ttf.eot'),
+                    url('./fonts/1st-Enterprises-Chrome.ttf.eot?#iefix') format('embedded-opentype'); 
+                font-weight: normal;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'Antilles-Chrome-Italic';
+                src:url('./fonts/Antilles-Chrome-Italic.ttf.woff') format('woff'),
+                    url('./fonts/Antilles-Chrome-Italic.ttf.svg#Antilles-Chrome-Italic') format('svg'),
+                    url('./fonts/Antilles-Chrome-Italic.ttf.eot'),
+                    url('./fonts/Antilles-Chrome-Italic.ttf.eot?#iefix') format('embedded-opentype'); 
+                font-weight: normal;
+                font-style: normal;
+            }
+            body { margin: 0; 
+                   cursor: url(scope.cur),auto;
+                   background:black;
+            }
+            canvas { width: 640px;
+                     height: 360px ;
+                     z-index:1}
+            input[type = button] {
+                font-family: monospace;
+            }
+            .alignleft {
+                float: left;
+            }
+            .alignright {
+                float: right;
+            }
+            button.link { 
+                font-family: 'Mensch-Bold';    
+                background: transparent;
+                border: none;
+                color:#102673;   
+                font-size:90px;
+                z-index:2;
+                visibility: hidden;
+                text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+                position:absolute;
+            }
+            button.link:hover{
+                color: orange;
+            }
+            .gametitle{
+                -moz-user-select: -moz-none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+                -o-user-select: none;
+                user-select: none;
+                font-family: 'Virtual-Realm-Italic';    
+                visibility: hidden;
+                background: transparent;
+                border: none;
+                color: orange;   
+                font-size:90px; 
+                z-index:2;
+                text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+                position:absolute;
+            }
+            .gamevariants{
+                -moz-user-select: -moz-none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+                -o-user-select: none;
+                user-select: none;
+                font-family: 'Mensch-Bold';
+                visibility: hidden;
+                background: transparent;
+                border: none;
+                color: orangered;   
+                font-size:40px; 
+                z-index:2;
+                text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+                position:absolute;
+            }
+            #StartClassic {
+                top: 24%;
+                left: 5%;
+            }
+            #StartFuturistic {
+                top: 24%;
+                right: 3%; 
+            }
+            #StartCustomClassic {
+                top: 50%;
+                left: 20%;
+            }
+            #StartCustomFuturistic {
+                top: 50%;
+                right: 18%;  
+            }
+            #Return {
+                text-align:center; 
+                left: 39.5%;
+                bottom:24%;
+            }
+            #StartWave {
+                text-align:center; 
+                left: 38.5%;
+                bottom:50%;
+            }
+            #Space{
+                top: -5%;
+                left: 28%;
+            }
+            #Ultimate{
+                font-family: '1st-Enterprises-Chrome';
+                transform:scale(1.5);
+                top: 8%;
+                left: 36.5%;
+            }
+            #GameoverTitle{
+                font-family: '1st-Enterprises-Chrome';
+                transform:scale(1.5);
+                top: -1%;
+                left: 36.5%;
+            }
+            #Gameover{
+                font-family: 'Antilles-Chrome-Italic';  
+                color: orangered;
+                font-size:330px;
+                top:-12%;
+                left:34.5%;
+                text-align: center;
+            }
+            #HeatBar{ 
+               width:450px;
+               height:60px;
+               bottom:10%;
+               right:2%;
+               border: 2px solid black;
+            }
+            #Enemies{
+               bottom:16%;
+               left:2%;
+            }
+            #Score{
+               bottom:8%;
+               left:2%;
+            }
+            #Level{
+               bottom:0%;
+               left:2%;
+            }
+        </style>
+        </head>
+        <body>
+            <button class="link" id="StartClassic"><p class="alignleft">CLASSIC<br/>ARCADE</p></button>
+            <button class="link" id="StartFuturistic"><p class="alignright">FUTURISTIC<br/>ARCADE</p></button>
+            <button class="link" id="StartCustomClassic"><p class="alignleft">CLASSIC<br/>CUSTOM</p></button>
+            <button class="link" id="StartCustomFuturistic"><p class="alignright">FUTURISTIC<br/>CUSTOM</p></button>
+            <button class="link" id="StartWave">START WAVE</button>
+            <button class="link" id="Return">MAIN MENU</button>
+            <p class="gametitle" id="Space">SPACE INVADERS <img src="./images/planet.png"  width="90" height="90" style="position :absolute; top:12px; left:103%"></p>
+            <p class="gametitle" id="Ultimate">ULTIMATE</p>
+            <p class="gametitle" id="GameoverTitle">GAME OVER</p>
+            <p class="gametitle" id="Gameover">WIN</p>
+            <canvas class="gamevariants" width="450" height="60" id="HeatBar">
+                <p>Your computer doesn't support the canvas tag</p>
+            </canvas>
+            <p class="gamevariants" id="Enemies">Enemies: 0/0</p>
+            <p class="gamevariants" id="Score">Score: 0</p>
+            <p class="gamevariants" id="Level">Level: 1</p>
+            <div id="container"></div>
+            <script src="./bin/three.min.js"></script>
+            <script src="./bin/stats.min.js"></script>
+            <script src="./bin/ColladaLoader.js"></script>
+            <script src="./bin/OrbitControls.js"></script>
+            <script src="./bin/MTLLoader.js"></script>
+            <script src="./bin/OBJLoader.js"></script>
+            <script src="./bin/dat.gui/dat.gui.min.js"></script>
+            <script src="./scripts.js" type="module"></script>
+        </body>
+    </html>
