@@ -12,6 +12,11 @@ $ npm run start
 
 Open http://localhost:8080
 
+## Example
+You can see how it works at this address: https://donky1989.github.io/SpaceInvadersUltimate/
+
+### Test
+The compatibility at the moment is well-tested only on the Chrome browser
 
 ## Authors
 
