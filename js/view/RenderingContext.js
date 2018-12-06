@@ -50,7 +50,7 @@ export default class RenderingContext {
         
         const light = new THREE.DirectionalLight(0xffffff, 0.8);
         var loader = new THREE.TextureLoader();
-        loader.load('./SpaceInvadersUltimate/images/background.jpg', function (texture) {
+        loader.load('/SpaceInvadersUltimate/images/background.jpg', function (texture) {
             scene.background = texture;
         });
         light.position.set(1, 1, 1);
