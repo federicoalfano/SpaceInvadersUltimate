@@ -1,6 +1,6 @@
 import Observable from '../../Observable.js';
 
-export default class ObjectPicker extends Observable {
+export default class GuiControls extends Observable {
     constructor(mediator, renderingContext) {
         super();
         this.mediator = mediator;

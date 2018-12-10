@@ -43,7 +43,7 @@
             body { margin: 0; 
                    cursor: url(scope.cur),auto;
                    background:black;
-                   font-size: 6vw;
+                   font-size: 5vw;
             }
             canvas { width: 640px;
                      height: 360px ;
@@ -104,19 +104,19 @@
                 position:absolute;
             }
             #StartClassic {
-                top: 24%;
+                top: 30%;
                 left: 5%;
             }
             #StartFuturistic {
-                top: 24%;
+                top: 30%;
                 right: 3%; 
             }
             #StartCustomClassic {
-                top: 50%;
+                top: 56%;
                 left: 20%;
             }
             #StartCustomFuturistic {
-                top: 50%;
+                top: 56%;
                 right: 18%;  
             }
             #Return {
@@ -131,31 +131,31 @@
             }
             #Space{
                 top: -5%;
-                left: 28%;
+                left: 30%;
             }
             #Ultimate{
                 font-family: '1st-Enterprises-Chrome';
                 transform:scale(1.5);
-                left: 36.5%;
+                left: 24.5%;
             }
             #GameoverTitle{
                 font-family: '1st-Enterprises-Chrome';
                 transform:scale(1.5);
                 top: -1%;
-                left: 12%;
+                left: 36.5%;
             }
             #Gameover{
                 font-family: 'Antilles-Chrome-Italic';  
                 color: orangered;
                 font-size:2.5em;
-                
+                left:10%;
                 text-align: center;
             }
             #HeatBar{ 
                width:9em;
                height:1.2em;
                bottom:10%;
-               right:2%;
+               right:7.5%;
                border: 2px solid black;
             }
             #Enemies{
@@ -180,10 +180,11 @@
             <button class="link" id="StartWave">START WAVE</button>
             <button class="link" id="Return">MAIN MENU</button>
             <p class="gametitle" id="Space">SPACE INVADERS <img src="./images/planet.png"   style="position :absolute; top:0.12em; left:103%; width: 15%;">
-            <span class="gametitle" id="Ultimate">ULTIMATE</span></p>
-            
+                <span class="gametitle" id="Ultimate">ULTIMATE</span>
+            </p>
             <p class="gametitle" id="GameoverTitle">GAME OVER
-            <span class="gametitle" id="Gameover">WIN</span></p>
+            <span class="gametitle" id="Gameover">WIN</span>
+            </p>
             <canvas class="gamevariants" width="450" height="60" id="HeatBar">
                 <p>Your computer doesn't support the canvas tag</p>
             </canvas>

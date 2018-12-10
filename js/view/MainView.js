@@ -1,7 +1,7 @@
 import RenderingContext from './RenderingContext.js';
 import EnvironmentMediator from './mediator/EnvironmentMediator.js';
 import ViewMediatorFactory from './ViewMediaFactory.js';
-import ObjectPicker from './controls/ObjectPicker.js';
+import GuiControls from './controls/GuiControls.js';
 export default class MainView {
 
     constructor(controller, environment) {
@@ -9,7 +9,7 @@ export default class MainView {
         this.environment = environment;
         this.renderingContext = this.createRenderingContext();
         this.environmentMediator = new EnvironmentMediator(environment, new ViewMediatorFactory());
-        this.objectPicker = new ObjectPicker(this.environmentMediator, this.renderingContext);
+        this.objectPicker = new GuiControls(this.environmentMediator, this.renderingContext);
         
     }
 
