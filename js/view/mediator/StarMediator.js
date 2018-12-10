@@ -17,7 +17,7 @@ export default class StarMediator extends ViewMediator {
         
         let container=new THREE.Object3D();
         let material = new THREE.MeshBasicMaterial({map:  new THREE.TextureLoader().load( './images/sun-texture.jpg' ), side: THREE.DoubleSide,color:this.element.properties.lightcolor});
-        let mesh = new THREE.Mesh(new THREE.SphereGeometry(this.element.properties.size, 35, 35), material);
+        let mesh = new THREE.Mesh(new THREE.SphereBufferGeometry(this.element.properties.size, 35, 35), material);
         mesh.name='Star';
         container.add(mesh);
         let light = new THREE.PointLight(this.element.properties.lightcolor, 2, 0);

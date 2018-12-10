@@ -14,10 +14,11 @@ export default class StarController {
         this.element.properties.stop=!this.element.properties.stop;
     }
     onOrbitAnimation(){
-        this.element.properties.OrbitAngle -= this.element.properties.speed;
+        this.element.properties.OrbitAngle= (this.element.properties.OrbitAngle-this.element.properties.speed)%360;
         let radians = this.element.properties.OrbitAngle * Math.PI / 180;
         this.element.properties.Movements.x=Math.cos(radians) * this.element.properties.OrbitRadius;
         this.element.properties.Movements.z=Math.sin(radians) * this.element.properties.OrbitRadius;
-        this.element.properties.Movements.y-= this.element.properties.RotateSpeed;
+        this.element.properties.Movements.y= (this.element.properties.Movements.y-this.element.properties.RotateSpeed)%360;
+        
     }
 }
