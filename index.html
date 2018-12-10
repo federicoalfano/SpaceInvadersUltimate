@@ -43,6 +43,7 @@
             body { margin: 0; 
                    cursor: url(scope.cur),auto;
                    background:black;
+                   font-size: 6vw;
             }
             canvas { width: 640px;
                      height: 360px ;
@@ -61,7 +62,7 @@
                 background: transparent;
                 border: none;
                 color:#102673;   
-                font-size:90px;
+                font-size:0.9em;
                 z-index:2;
                 visibility: hidden;
                 text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
@@ -81,7 +82,7 @@
                 background: transparent;
                 border: none;
                 color: orange;   
-                font-size:90px; 
+                font-size:0.9em; 
                 z-index:2;
                 text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
                 position:absolute;
@@ -97,7 +98,7 @@
                 background: transparent;
                 border: none;
                 color: orangered;   
-                font-size:40px; 
+                font-size:0.4em; 
                 z-index:2;
                 text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
                 position:absolute;
@@ -135,26 +136,24 @@
             #Ultimate{
                 font-family: '1st-Enterprises-Chrome';
                 transform:scale(1.5);
-                top: 8%;
                 left: 36.5%;
             }
             #GameoverTitle{
                 font-family: '1st-Enterprises-Chrome';
                 transform:scale(1.5);
                 top: -1%;
-                left: 36.5%;
+                left: 12%;
             }
             #Gameover{
                 font-family: 'Antilles-Chrome-Italic';  
                 color: orangered;
-                font-size:330px;
-                top:-12%;
-                left:34.5%;
+                font-size:2.5em;
+                
                 text-align: center;
             }
             #HeatBar{ 
-               width:450px;
-               height:60px;
+               width:9em;
+               height:1.2em;
                bottom:10%;
                right:2%;
                border: 2px solid black;
@@ -174,16 +173,17 @@
         </style>
         </head>
         <body>
-            <button class="link" id="StartClassic"><p class="alignleft">CLASSIC<br/>ARCADE</p></button>
-            <button class="link" id="StartFuturistic"><p class="alignright">FUTURISTIC<br/>ARCADE</p></button>
-            <button class="link" id="StartCustomClassic"><p class="alignleft">CLASSIC<br/>CUSTOM</p></button>
-            <button class="link" id="StartCustomFuturistic"><p class="alignright">FUTURISTIC<br/>CUSTOM</p></button>
+            <button class="link alignleft" id="StartClassic">CLASSIC<br/>ARCADE</button>
+            <button class="link alignright" id="StartFuturistic">FUTURISTIC<br/>ARCADE</button>
+            <button class="link alignleft" id="StartCustomClassic">CLASSIC<br/>CUSTOM</button>
+            <button class="link alignright" id="StartCustomFuturistic">FUTURISTIC<br/>CUSTOM</button>
             <button class="link" id="StartWave">START WAVE</button>
             <button class="link" id="Return">MAIN MENU</button>
-            <p class="gametitle" id="Space">SPACE INVADERS <img src="./images/planet.png"  width="90" height="90" style="position :absolute; top:12px; left:103%"></p>
-            <p class="gametitle" id="Ultimate">ULTIMATE</p>
-            <p class="gametitle" id="GameoverTitle">GAME OVER</p>
-            <p class="gametitle" id="Gameover">WIN</p>
+            <p class="gametitle" id="Space">SPACE INVADERS <img src="./images/planet.png"   style="position :absolute; top:0.12em; left:103%; width: 15%;">
+            <span class="gametitle" id="Ultimate">ULTIMATE</span></p>
+            
+            <p class="gametitle" id="GameoverTitle">GAME OVER
+            <span class="gametitle" id="Gameover">WIN</span></p>
             <canvas class="gamevariants" width="450" height="60" id="HeatBar">
                 <p>Your computer doesn't support the canvas tag</p>
             </canvas>
