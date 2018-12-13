@@ -170,6 +170,28 @@
                bottom:0%;
                left:2%;
             }
+            #myProgress {
+                width: 30%;
+                background-color: #ddd;
+                position: absolute;
+                text-align: center;
+                top: 50%;
+                left: 35%;
+                border-radius: 15px;
+            }
+
+            #myBar {
+                border-radius: 15px;
+                width: 0%;
+                visibility: hidden;
+                height: 3%;
+                background-color: #FF5500;
+                font-size: 0.3em;
+                text-align: center;
+                line-height: 30px;
+                color: white;
+                border: solid;
+            }
             @-moz-document url-prefix() {
                 #Gameover{
                     top:100%;
@@ -184,6 +206,9 @@
             <button class="link alignright" id="StartCustomFuturistic">FUTURISTIC<br/>CUSTOM</button>
             <button class="link" id="StartWave">START WAVE</button>
             <button class="link" id="Return">MAIN MENU</button>
+            <div id="myProgress">
+                <div id="myBar">0%</div>
+            </div>
             <p class="gametitle" id="Space">SPACE INVADERS <img src="./images/planet.png"   style="position :absolute; top:0.12em; left:103%; width: 15%;">
                 <span class="gametitle" id="Ultimate">ULTIMATE</span>
             </p>
