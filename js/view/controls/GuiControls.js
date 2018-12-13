@@ -5,7 +5,7 @@ export default class GuiControls extends Observable {
         super();
         this.mediator = mediator;
         this.renderingContext = renderingContext;
-
+        this.touch=false;
     }
 
     initialize() {
@@ -13,6 +13,10 @@ export default class GuiControls extends Observable {
         this.renderingContext.renderer.domElement.addEventListener('mousedown', (e) => this.onMouseDown(e));
         this.renderingContext.renderer.domElement.addEventListener('mousemove', (e) => this.onMouseMove(e));
         this.renderingContext.renderer.domElement.addEventListener('mouseup',(e)=>this.onMouseUp(e));
+        this.renderingContext.renderer.domElement.addEventListener('touchstart', (e) => this.touchHandler(e));
+        this.renderingContext.renderer.domElement.addEventListener('touchend', (e) => this.touchHandler(e));
+        this.renderingContext.renderer.domElement.addEventListener('touchmove', (e) => this.touchHandler(e));
+        this.renderingContext.renderer.domElement.addEventListener('touchcancel',(e)=>this.touchHandler(e));
         this.renderingContext.startClassicButton.addEventListener('click',(e)=>this.onClassicMode(e));
         this.renderingContext.startFuturisticButton.addEventListener('click',(e)=>this.onFuturisticMode(e));
         this.renderingContext.startCustomClassicButton.addEventListener('click',(e)=>this.onCustomClassicMode(e));
@@ -20,20 +24,41 @@ export default class GuiControls extends Observable {
         this.renderingContext.returnMenuButton.addEventListener('click',(e)=>this.onReturn(e));
         
     }
-
+    
     onMouseUp(e){
         this.emit('mouseup', {})
     }
-
     onMouseDown(e) {
-
         this.emit('mousedown', {});
     }
-
     onMouseMove(e) {
-
         this.emit('mousemove', e);
     }
+    //touch to mouse conversion
+    touchHandler(e) {
+        var touches = e.changedTouches, first = touches[0], type = "";
+        switch (e.type){
+            case "touchstart":
+                type = "mousedown";
+                break;
+            case "touchmove":
+                type = "mousemove";
+                break;
+            case "touchend":
+                type = "mouseup";
+                break;
+            case "touchcancel":
+                type = "mouseup";
+                break;
+            default:
+                return;
+        }
+        var simulatedEvent = document.createEvent("MouseEvent");
+        simulatedEvent.initMouseEvent(type, true, true, window, 1, first.screenX, first.screenY, first.clientX, first.clientY, false, false, false, false, 0/*left*/, null);
+        first.target.dispatchEvent(simulatedEvent);
+        e.preventDefault();
+    }
+    
     onClassicMode(e) {
         this.renderingContext.inpageTitle[0].style.visibility = 'hidden';
         this.renderingContext.inpageTitle[1].style.visibility = 'hidden';
