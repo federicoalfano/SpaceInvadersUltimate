@@ -19,5 +19,5 @@ The compatibility at the moment is well-tested only on the Chrome browser
 
 ## Authors
 
-* **Federico Alfano**  - [donky1989](https://github.com/federicoalfano/)
+* **Federico Alfano**  - [federicoalfano](https://github.com/federicoalfano/)
 * **Luca Vargiu** - [bersa125](https://github.com/bersa125)
